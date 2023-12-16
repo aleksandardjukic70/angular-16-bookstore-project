@@ -1,7 +1,13 @@
-<<<<<<< HEAD
-# Store
+
+# Angular 16 Bookstore project
+
+The goal of this project was to build a functional shopping cart that can use articles imported using JSON Server API. 
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.1.
+
+## Starting JSON Database 
+
+Run `json-server --watch db.json` to start the JSON Server (db.json file is in root folder)
 
 ## Development server
 
@@ -26,6 +32,3 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
-=======
-# angular-16-bookstore-project
->>>>>>> 1ec8d255ba0e19e1792f86cc4f9a15ceba7b8db8
