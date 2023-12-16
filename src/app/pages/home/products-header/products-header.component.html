@@ -1,0 +1,36 @@
+<mat-card class="mb-4"> <!-- KARTICA ZA PROIZVOD, mb-4 - MARGIN BOTTOM -->
+    <div class="flex justify-between">
+        <div> <!-- LEVA STRANA (SORT BY)-->
+            <button mat-button [matMenuTriggerFor]="sortByMenu"><!-- DUGME(TRIGGER)-->
+                Sortiraj {{sort}}
+                <mat-icon> expand_more </mat-icon>
+            </button>
+            <mat-menu #sortByMenu="matMenu"> <!-- UVEZUJEMO OVAJ MENI ZA OVO DUGME (TRIGGER)-->
+                <button (click)="onSortUpdated('desc')" mat-menu-item>Opadajuće</button> <!-- POZIVAMO METOD PRITISKOM KOJI VRAĆA DESCENDING-->
+                <button (click)="onSortUpdated('asc')" mat-menu-item>Rastuće</button> <!-- POZIVAMO METOD PRITISKOM KOJI VRAĆA ASC-->
+            </mat-menu>
+        </div>
+        <div class="flex items-center"> <!-- DESNA STRANA (SHOW #BROJ_ELEMENATA)-->
+            <div>
+                <button mat-button [mat-menu-trigger-for]="changeNumberOfItemsMenu">
+                    Prikaži {{ itemsShowCount}}
+                    <mat-icon> expand_more </mat-icon>
+                </button>
+                <mat-menu #changeNumberOfItemsMenu="matMenu">
+                    <button (click)="onItemsUpdated(10)" mat-menu-item>10</button>
+                    <button (click)="onItemsUpdated(20)" mat-menu-item>20</button>
+                    <button (click)="onItemsUpdated(30)" mat-menu-item>30</button>
+                </mat-menu>
+            </div>
+            <button (click)="onColumnsUpdated(1)"> <!-- 1 PROIZVOD PO REDU -->
+                <mat-icon>view_list</mat-icon> <!-- DUGME ZA PROMENU IZGLEDA IZLISTAVANJA PROIZVODA -->
+            </button>
+            <button (click)="onColumnsUpdated(3)"> <!-- 3 PROIZVODA PO REDU -->
+                <mat-icon>view_module</mat-icon> <!-- DUGME ZA PROMENU IZGLEDA IZLISTAVANJA PROIZVODA -->
+            </button>
+            <button (click)="onColumnsUpdated(4)"> <!-- 4 PROIZVOD PO REDU -->
+                <mat-icon>view_comfy</mat-icon> <!-- DUGME ZA PROMENU IZGLEDA IZLISTAVANJA PROIZVODA -->
+            </button>
+        </div>
+    </div>
+</mat-card>

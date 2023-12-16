@@ -1,0 +1,10 @@
+<mat-expansion-panel *ngIf="categories"> <!-- PANEL KOJI SE OTVARA PRITISKOM NA IME KOMPONENTE(filters), ngIf - AKO KATEGORIJE POSTOJE I NISU NEDEFINISANE PRIKAŽI OVO U SUPROTNOM SAKRIJ PANEL-->
+    <mat-expansion-panel-header>
+        <mat-panel-title> Kategorije </mat-panel-title>
+    </mat-expansion-panel-header>
+    <mat-selection-list [multiple]="false"> <!-- DOZVOLJAVA NAM DA ODABEREMO NEKI ELEMENT IZ LISTE, multiple - UZIMA VIŠE ELEMENATA ODJEDNOM -->
+        <mat-list-option *ngFor="let category of categories" [value]="category"> <!-- PETLJA ZA categories -->
+            <button (click)="onShowCategory(category)">{{category}}</button> <!-- FUNKCIJA ZA PRIKAZIVANJE ODABRANE KATEGORIJE -->
+        </mat-list-option>
+    </mat-selection-list>
+</mat-expansion-panel>
